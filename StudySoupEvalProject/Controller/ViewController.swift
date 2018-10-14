@@ -102,7 +102,7 @@ extension UIViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         // Present an alert view
-        let alertController = UIAlertController(title: "Appointment for " + date, message: message, preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Appointments for " + date, message: message, preferredStyle: UIAlertController.Style.alert)
         // Add a "OK" action to the alert
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action: UIAlertAction) in
             alertController.dismiss(animated: true, completion: nil)
