@@ -17,6 +17,7 @@
 		504643AA217109B1003A0723 /* SSAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504643A9217109B1003A0723 /* SSAPIs.swift */; };
 		504643AC217238A1003A0723 /* SSAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504643AB217238A1003A0723 /* SSAppointment.swift */; };
 		504643AE21724403003A0723 /* SSAppointmentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504643AD21724403003A0723 /* SSAppointmentAPI.swift */; };
+		504643B1217388FD003A0723 /* ATMProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504643B0217388FD003A0723 /* ATMProjectTests.swift */; };
 		5CC347FE8A516FFA3551A2B8 /* Pods_StudySoupEvalProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C3A59C6CA00A1CD7C536D7 /* Pods_StudySoupEvalProjectTests.framework */; };
 		A6C3986651FEEB5AC4558C62 /* Pods_StudySoupEvalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB91E96AF1B86610CC296D6 /* Pods_StudySoupEvalProject.framework */; };
 		F73D4B82E69C67FE4D13A96B /* Pods_StudySoupEvalProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBFF7AF535EF34E6B4B654D /* Pods_StudySoupEvalProjectUITests.framework */; };
@@ -59,6 +60,7 @@
 		504643A9217109B1003A0723 /* SSAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAPIs.swift; sourceTree = "<group>"; };
 		504643AB217238A1003A0723 /* SSAppointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppointment.swift; sourceTree = "<group>"; };
 		504643AD21724403003A0723 /* SSAppointmentAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSAppointmentAPI.swift; sourceTree = "<group>"; };
+		504643B0217388FD003A0723 /* ATMProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATMProjectTests.swift; sourceTree = "<group>"; };
 		5C28B1C109876234A359BBD7 /* Pods-StudySoupEvalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudySoupEvalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudySoupEvalProject/Pods-StudySoupEvalProject.release.xcconfig"; sourceTree = "<group>"; };
 		6EBFF7AF535EF34E6B4B654D /* Pods_StudySoupEvalProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudySoupEvalProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C3A59C6CA00A1CD7C536D7 /* Pods_StudySoupEvalProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudySoupEvalProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				5046438A2170D50E003A0723 /* StudySoupEvalProjectTests.swift */,
+				504643B0217388FD003A0723 /* ATMProjectTests.swift */,
 				5046438C2170D50E003A0723 /* Info.plist */,
 			);
 			path = StudySoupEvalProjectTests;
@@ -252,6 +255,7 @@
 				504643822170D50E003A0723 /* Sources */,
 				504643832170D50E003A0723 /* Frameworks */,
 				504643842170D50E003A0723 /* Resources */,
+				94B21105B99FEB1C0937C674 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -431,6 +435,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -440,11 +445,36 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudySoupEvalProject/Pods-StudySoupEvalProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94B21105B99FEB1C0937C674 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StudySoupEvalProjectTests/Pods-StudySoupEvalProjectTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StudySoupEvalProjectTests/Pods-StudySoupEvalProjectTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -466,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				504643B1217388FD003A0723 /* ATMProjectTests.swift in Sources */,
 				5046438B2170D50E003A0723 /* StudySoupEvalProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

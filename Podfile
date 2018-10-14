@@ -10,10 +10,12 @@ target 'StudySoupEvalProject' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Alamofire' , '~> 4.7.2'
   pod 'AlamofireObjectMapper', '~> 5.0'
+  pod 'PKHUD', '~> 5.0'
 
   target 'StudySoupEvalProjectTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Mockingjay'
   end
 
   target 'StudySoupEvalProjectUITests' do

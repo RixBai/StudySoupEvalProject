@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 let APPOINTMENT_CELL_REUSE_IDENTIFIER = "appointmentCellReuseIdentifier"
 let api:AppointmentAPI = AppointmentAPI()
@@ -19,6 +20,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         reloadAppointments()
     }
     
@@ -31,12 +36,24 @@ class ViewController: UIViewController {
      Call appointment api endpoint and return the appointments available
      */
     func reloadAppointments() {
+        HUD.show(.progress)
         api.appointments { (schedule) in
             // return if no appointments are available
-            guard let newSchedule = schedule else { return }
-            guard let appointments = newSchedule.availableAppointments else { return }
-            newAppointments = appointments
+            guard let newSchedule = schedule else {
+                HUD.flash(.error, delay: 1.0)
+                return
+            }
+            guard let appointments = newSchedule.availableAppointments else {
+                // reload empty appointment list
+                newAppointments = []
+                HUD.flash(.success, delay: 1.0)
+                self.tblAppointments.reloadData()
+                return
+            }
+            
             // Reload tableview for new appointments returned
+            newAppointments = appointments
+            HUD.flash(.success, delay: 1.0)
             self.tblAppointments.reloadData()
         }
     }
